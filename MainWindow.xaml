@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
+        <TextBlock>Summary button</TextBlock>
+        <CheckBox x:Name="btnSummary"></CheckBox>
         <TextBlock>Year</TextBlock>
         <RadioButton x:Name="btn2017" >2017 </RadioButton>
         <RadioButton x:Name="btn2018">2018</RadioButton>
-        <TextBlock>Month</TextBlock>
+        <TextBlock>Month sales</TextBlock>
         <ComboBox x:Name="month">
             <ComboBoxItem Content="January"/>
             <ComboBoxItem Content="Febuary"/>

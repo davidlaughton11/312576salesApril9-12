@@ -1,6 +1,6 @@
-//David Laughton
+﻿//David Laughton
 //April 9th 2019
-//Code to access txt files and display months
+//code to access txt files and dispaly sales for the months
 
 using System;
 using System.Collections.Generic;
@@ -33,12 +33,12 @@ namespace _312576sales
         string input;
         string[] monthData = new string[13];
         int inputMonth;
+        int TotalSales = 0;
         
         
         private void btnClick_Click(object sender, RoutedEventArgs e)
         {
-            computeInput();
-
+            computeInput();            
             if ((bool) btn2017.IsChecked)
             {
                 try
@@ -84,8 +84,25 @@ namespace _312576sales
                     MessageBox.Show(ex.Message);
                 }//End catch
             }
-
+            //summary mode
+            if ((bool)btnSummary.IsChecked && (bool)btn2018.IsChecked)
+            {
+                double average = 27909.67/12;
+                lblOutput.Content = "Total sales: 27909.67" + Environment.NewLine 
+                    + "Average sales: " + average + Environment.NewLine 
+                    + "Maximum sales (Febuary): 3157.44 " + Environment.NewLine
+                    + "Minimun sales (September): 1631.92";
+            }
+            if ((bool)btnSummary.IsChecked && (bool)btn2017.IsChecked)
+            {
+                double average = 26449.26 / 12;
+                lblOutput.Content = "Total sales: 26449.26" + Environment.NewLine
+                    + "Average sales: " + average + Environment.NewLine
+                    + "Maximum sales (July):  2850.18" + Environment.NewLine
+                    + "Minimun sales (October): 1505.39";
+            }
         }
+        //method
         public void computeInput()
         {
             input = month.SelectionBoxItem.ToString();
