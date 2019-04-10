@@ -1,4 +1,8 @@
-﻿using System;
+//David Laughton
+//April 9th 2019
+//Code to access txt files and display months
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
